@@ -7,26 +7,28 @@ const ProductContext = React.createContext();
 //Consumer
 
 class ProductProvider extends Component {
-    state = {
-        products: storeProducts,
-        detailProduct: detailProduct
-    };
-    handleDetail = () => {
-        console.log('Hello from detail')
-    }
+  state = {
+    products: storeProducts,
+    detailProduct: detailProduct,
+  };
+  handleDetail = () => {
+    console.log("Hello from detail");
+  };
 
-    addToCart = () => {
-        console.log('Hello from add to cart')
-    }
-    render() { 
-        return (
-        <ProductContext.Provider value={{products: 
-            ...this.state, 
-            handleDetail: this.handleDetail,
-            addToCart: this.addToCart
-        }}>
-            {this.props.children}
-        </ProductContext.Provider>
+  addToCart = () => {
+    console.log("Hello from add to cart");
+  };
+  render() {
+    return (
+      <ProductContext.Provider
+        value={{
+          ...this.state,
+          handleDetail: this.handleDetail,
+          addToCart: this.addToCart,
+        }}
+      >
+        {this.props.children}
+      </ProductContext.Provider>
     );
   }
 }
